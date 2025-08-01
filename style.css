@@ -50,10 +50,10 @@ a {
   color: #e67e22;
 }
 
-
+/*HOME */
 /* Hero Section */
-.hero {
-  background: url('images/heroimage.png') center/cover no-repeat;
+.hero{
+  
   height: 100vh;
   color: white;
   display: flex;
@@ -61,6 +61,11 @@ a {
   justify-content: center;
   text-align: center;
   position: relative;
+}
+
+/* hero bg image*/
+.hero-home{
+  background: url('images/heroimagehome.png') center/cover no-repeat;
 }
 .hero::after {
   content: "";
@@ -97,22 +102,22 @@ a {
   background: #d35400;
 }
 
-/* Menu Section */
-.menu-section {
+/* Special Section */
+.special-section {
   padding: 4rem 2rem;
   text-align: center;
 }
-.menu-section h2 {
+.special-section h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
 }
-.menu-grid {
+.special-grid {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
 }
-.menu-card {
+.special-card {
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -120,21 +125,47 @@ a {
   transition: transform 0.4s, box-shadow 0.4s;
   width: 300px;
 }
-.menu-card img {
+.special-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
-.menu-card h3 {
+.special-card h3 {
   margin: 1rem 0 0.5rem;
 }
-.menu-card p {
+.special-card p {
   padding: 0 1rem 1rem;
 }
-.menu-card:hover {
+.special-card:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
+
+/* bottom-nav before footer*/
+.bottom-nav {
+  background: #fffaf6;
+  padding: 1rem 0;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+.bottom-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.bottom-nav a {
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.bottom-nav a:hover {
+  color: #e67e22;
+}
+
 
 /* Footer */
 .footer {
@@ -161,8 +192,208 @@ a {
   .hero h1 {
     font-size: 2.5rem;
   }
+  .special-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* MENU */
+
+/* Hero Section for Menu Page */
+
+.special-section h2{
+  font-family: 'Allura', cursive;
+  font-size: 50px;
+  
+}
+.hero-menu {
+  background: url('images/menu-banner.png') center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+
+
+.hero-menu::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-menu .hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-menu h1 {
+  font-size: 3.5rem;
+  font-family: 'Allura', cursive;
+}
+
+/* Animated Ingredients Section */
+/* Animated Ingredients Section (Updated for Rolling Animation) */
+.ingredients-animation {
+  position: relative;
+  height: 200px;
+  background: #fffaf6;
+  overflow: hidden;
+}
+
+/* Common styles for all images */
+.ingredients-animation img {
+  position: absolute;
+  width: 80px;
+  height: auto;
+  transform-origin: center;
+}
+
+/* Pasta: rolls left to right */
+.pasta {
+  top: 30px;
+  left: -100px;
+  animation: roll-right 14s linear infinite;
+}
+
+/* Tomato: rolls right to left */
+.tomato {
+  top: 80px;
+  right: -100px;
+  animation: roll-left 16s linear infinite;
+}
+
+/* Basil: rolls left to right again */
+.basil {
+  top: 130px;
+  left: -120px;
+  animation: roll-right 18s linear infinite;
+}
+
+/* Left to Right Roll */
+@keyframes roll-right {
+  0% {
+    left: -120px;
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    left: 100%;
+    transform: rotate(360deg);
+  }
+}
+
+/* Right to Left Roll */
+@keyframes roll-left {
+  0% {
+    right: -120px;
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    right: 100%;
+    transform: rotate(-360deg);
+  }
+}
+
+
+
+.full-menu {
+  background: #fffaf6;
+  padding: 4rem 2rem;
+}
+
+
+
+
+.menu-group {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.menu-group h2 {
+  font-size: 50px;
+  margin-bottom: 2rem;
+  font-family: 'Allura', cursive;
+  
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  
+}
+
+.menu-card {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 10px 10px 10px #8f665b;
+  
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+
+.menu-card:hover {
+  transform: scale(1.03);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background:#a55540;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+
+}
+
+.menu-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-overlay h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-overlay p {
+  font-size: 1rem;
+}
+
+/* Responsive (extend existing block) */
+@media (max-width: 768px) {
   .menu-grid {
     flex-direction: column;
     align-items: center;
   }
 }
+
