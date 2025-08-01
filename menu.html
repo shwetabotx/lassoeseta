@@ -128,7 +128,94 @@
     </div>
   </div>
 
-  <!-- Continue with Main Course, Desserts... -->
+ 
+
+  <!-- Main Course Section -->
+<section class="menu-group mainpasta">
+  <h2>Main Course</h2>
+  
+  <div class="menu-grid">
+
+    <!-- Pasta Card -->
+    <div class="menu-card hover-reveal" onclick="toggleMenu('pastaMenu')">
+      <img src="images/mainpasta.png" alt="Pasta">
+      <div class="card-overlay">
+        <h3>Click On Pasta</h3>
+      </div>
+    </div>
+
+    <!-- Pizza Card -->
+    <div class="menu-card hover-reveal" onclick="toggleMenu('pizzaMenu')">
+      <img src="images/mainpizza.png" alt="Pizza">
+      <div class="card-overlay">
+        <h3>Click On Pizza</h3>
+      </div>
+    </div>
+
+    <!-- Meat & Seafood Card -->
+    <div class="menu-card hover-reveal" onclick="toggleMenu('meatMenu')">
+      <img src="images/mainmeat.png" alt="Meat & Seafood-Based">
+      <div class="card-overlay">
+        <h3>Click On Meat & Seafood</h3>
+      </div>
+    </div>
+
+    <!-- Luxury Card -->
+    <div class="menu-card hover-reveal" onclick="toggleMenu('luxuryMenu')">
+      <img src="images/mainluxury.png" alt="Luxury Dishes">
+      <div class="card-overlay">
+        <h3>Click On Luxury Signature</h3>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Pasta Submenu -->
+  <div class="submenu hidden" id="pastaMenu">
+    <h3>Pasta Varieties</h3>
+    <ul>
+      <li>Spaghetti Carbonara</li>
+      <li>Fettuccine Alfredo</li>
+      <li>Lasagna Bolognese</li>
+      <li>Penne Arrabbiata</li>
+    </ul>
+  </div>
+
+  <!-- Pizza Submenu -->
+  <div class="submenu hidden" id="pizzaMenu">
+    <h3>Pizza Varieties</h3>
+    <ul>
+      <li>Margherita</li>
+      <li>Quattro Formaggi</li>
+      <li>Prosciutto e Funghi</li>
+      <li>Capricciosa</li>
+    </ul>
+  </div>
+
+  <!-- Meat & Seafood Submenu -->
+  <div class="submenu hidden" id="meatMenu">
+    <h3>Meat & Seafood</h3>
+    <ul>
+      <li>Osso Buco</li>
+      <li>Pollo alla Cacciatora</li>
+      <li>Branzino al Forno</li>
+      <li>Scaloppine al Limone</li>
+    </ul>
+  </div>
+
+  <!-- Luxury Submenu -->
+  <div class="submenu hidden" id="luxuryMenu">
+    <h3>Luxury Signature</h3>
+    <ul>
+      <li>Filetto di Manzo al Barolo</li>
+      <li>Aragosta alla Griglia</li>
+      <li>Anatra all’Arancia</li>
+      <li>Ravioli di Mare</li>
+    </ul>
+  </div>
+
+</section>
+
 </section>
 
 
@@ -146,6 +233,18 @@
   <footer class="footer">
     <p>&copy; 2025 Rosso e Seta. All rights reserved.</p>
   </footer>
+<script>
+  function toggleMenu(menuId) {
+    const submenus = document.querySelectorAll('.submenu');
+    submenus.forEach(menu => {
+      if (menu.id === menuId) {
+        menu.classList.toggle('show');
+      } else {
+        menu.classList.remove('show');
+      }
+    });
+  }
+</script>
 
 </body>
 </html>

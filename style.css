@@ -209,7 +209,7 @@ a {
   
 }
 .hero-menu {
-  background: url('images/menu-banner.png') center/cover no-repeat;
+  background: url('images/heroimagemenu.png') center/cover no-repeat;
   height: 70vh;
   display: flex;
   align-items: center;
@@ -387,6 +387,38 @@ a {
 
 .card-overlay p {
   font-size: 1rem;
+}
+/*SUB MENU */
+
+.submenu {
+  margin-top: 20px;
+  display: none;
+  padding: 20px;
+  background: #f9f9f9;
+  border-left: 5px solid #c0392b;
+  
+}
+
+
+.submenu h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #c0392b;
+}
+
+.submenu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.submenu ul li {
+  padding: 5px 0;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.submenu.show {
+  display: block;
 }
 
 /* Responsive (extend existing block) */
