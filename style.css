@@ -4,12 +4,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Georgia', serif;
   line-height: 1.6;
   color: #333;
   background: #fffaf6;
 }
+
 a {
   text-decoration: none;
 }
@@ -52,8 +54,8 @@ a {
 
 /*HOME */
 /* Hero Section */
-.hero{
-  
+.hero {
+
   height: 100vh;
   color: white;
   display: flex;
@@ -64,22 +66,28 @@ a {
 }
 
 /* hero bg image*/
-.hero-home{
+.hero-home {
   background: url('images/heroimagehome.png') center/cover no-repeat;
 }
+
 .hero::after {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.5);
 }
+
 .hero-content {
   position: relative;
   z-index: 1;
   animation: fadeInUp 2s ease;
 }
+
 .hero-content h1 {
-    font-family: 'Allura', cursive;
+  font-family: 'Allura', cursive;
 
 }
 
@@ -87,10 +95,12 @@ a {
   font-size: 4rem;
   margin-bottom: 0.5rem;
 }
+
 .hero p {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
+
 .btn {
   background: #e67e22;
   color: white;
@@ -98,6 +108,7 @@ a {
   border-radius: 25px;
   transition: background 0.3s;
 }
+
 .btn:hover {
   background: #d35400;
 }
@@ -107,38 +118,45 @@ a {
   padding: 4rem 2rem;
   text-align: center;
 }
+
 .special-section h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
 }
+
 .special-grid {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .special-card {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.4s, box-shadow 0.4s;
   width: 300px;
 }
+
 .special-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
+
 .special-card h3 {
   margin: 1rem 0 0.5rem;
 }
+
 .special-card p {
   padding: 0 1rem 1rem;
 }
+
 .special-card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* bottom-nav before footer*/
@@ -181,6 +199,7 @@ a {
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -192,6 +211,7 @@ a {
   .hero h1 {
     font-size: 2.5rem;
   }
+
   .special-grid {
     flex-direction: column;
     align-items: center;
@@ -203,11 +223,12 @@ a {
 
 /* Hero Section for Menu Page */
 
-.special-section h2{
+.special-section h2 {
   font-family: 'Allura', cursive;
   font-size: 50px;
-  
+
 }
+
 .hero-menu {
   background: url('images/heroimagemenu.png') center/cover no-repeat;
   height: 70vh;
@@ -282,9 +303,11 @@ a {
     left: -120px;
     transform: rotate(0deg);
   }
+
   50% {
     transform: rotate(180deg);
   }
+
   100% {
     left: 100%;
     transform: rotate(360deg);
@@ -297,9 +320,11 @@ a {
     right: -120px;
     transform: rotate(0deg);
   }
+
   50% {
     transform: rotate(-180deg);
   }
+
   100% {
     right: 100%;
     transform: rotate(-360deg);
@@ -325,7 +350,7 @@ a {
   font-size: 50px;
   margin-bottom: 2rem;
   font-family: 'Allura', cursive;
-  
+
 }
 
 .menu-grid {
@@ -333,7 +358,7 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   justify-items: center;
-  
+
 }
 
 .menu-card {
@@ -343,7 +368,7 @@ a {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 10px 10px 10px #8f665b;
-  
+
   cursor: pointer;
   transition: transform 0.4s;
 }
@@ -363,7 +388,7 @@ a {
 .card-overlay {
   position: absolute;
   inset: 0;
-  background:#a55540;
+  background: #a55540;
   color: white;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -388,17 +413,28 @@ a {
 .card-overlay p {
   font-size: 1rem;
 }
+
 /*SUB MENU */
 
-.submenu {
-  margin-top: 20px;
+.menu-card .submenu {
   display: none;
-  padding: 20px;
-  background: #f9f9f9;
-  border-left: 5px solid #c0392b;
-  
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 2rem 1rem;
+  text-align: center;
+  overflow-y: auto;
 }
 
+.menu-card.show-submenu .submenu {
+  display: block;
+}
 
 .submenu h3 {
   font-size: 1.5rem;
@@ -411,6 +447,13 @@ a {
   padding: 0;
 }
 
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
 .submenu ul li {
   padding: 5px 0;
   font-size: 1.1rem;
@@ -421,11 +464,14 @@ a {
   display: block;
 }
 
-/* Responsive (extend existing block) */
 @media (max-width: 768px) {
-  .menu-grid {
+
+  .navbar {
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Optional: for better visibility on mobile */
+
   }
 }
-
